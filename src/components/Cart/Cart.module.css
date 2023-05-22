@@ -1,0 +1,35 @@
+.container {
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: inherit;
+}
+
+.container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.header {
+
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.footer {
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+}

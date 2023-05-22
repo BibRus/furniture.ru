@@ -1,0 +1,41 @@
+.header {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+}
+
+.info {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    width: inherit;
+}
+
+.dignities {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.dignities > * {
+    margin-top: 40px;
+}
+
+.product {
+    width: 30%;
+}
+
+.description {
+    width: 60%;
+}
+
+.description > p {
+    margin-top: 0;
+}

@@ -1,0 +1,8 @@
+@import "../../globals.module.css";
+
+.text {
+    font-size: var(--default-font-size);
+    color: var(--light-gray-text-color);
+    margin-right: 20px;
+}
+

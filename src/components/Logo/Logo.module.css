@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    align-items: center;
+    height: inherit;
+    cursor: pointer;
+}
+
+.image {
+    margin-right: 5px;
+    width: 20px;
+}
+
+.text {
+    font-size: 18px;
+}

@@ -1,0 +1,7 @@
+.container {
+    width: max-content;
+    height: inherit;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

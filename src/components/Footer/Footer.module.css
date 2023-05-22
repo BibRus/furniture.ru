@@ -1,0 +1,61 @@
+.container {
+    background-color: var(--gray-background-color);
+    padding: 20px 40px;
+    margin-top: 80px;
+}
+
+.header {
+    width: 100%;
+}
+
+.body {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer {
+    width: 100%;
+}
+
+.contacts {
+
+}
+
+.media {
+    width: max-content;
+}
+
+.media > * {
+    margin-right: 8px;
+}
+
+.subscription {
+    display: flex;
+    justify-content: space-between;
+    width: max-content;
+    margin-top: 60px;
+}
+
+.subscription > * {
+    margin-right: 8px;
+}
+
+.clients {
+
+}
+
+.info {
+
+}
+
+.policy {
+    display: flex;
+    justify-content: space-between;
+}
+
+hr {
+    margin: 10px 0;
+}
+
+

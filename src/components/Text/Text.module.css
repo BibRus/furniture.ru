@@ -1,0 +1,26 @@
+.text {
+    color: var(--light-gray-text-color);
+    font-size: 1rem;
+}
+
+.bold {
+    composes: text;
+    color: var(--black-text-color);
+}
+.label {
+    color: var(--black-text-color);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: 'Golos Text', sans-serif;
+}
+.title {
+    color: var(--black-text-color);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.6rem;
+    font-family: 'Golos Text', sans-serif;
+}
+
+
+

@@ -1,0 +1,17 @@
+.container {
+    width: 380px;
+    background-color: var(--gray-background-color);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.container > *:first-child {
+    margin: 20px 15px;
+}
+
+.image {
+    width: inherit;
+}

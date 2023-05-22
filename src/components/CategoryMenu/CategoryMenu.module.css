@@ -1,0 +1,12 @@
+.container {
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    padding: 0 40px;
+}
+
+.container > * {
+    margin-bottom: 8px;
+    width: inherit;
+}
