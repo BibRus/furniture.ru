@@ -12,11 +12,13 @@ import LoginForm from "../LoginForm/LoginForm";
 import cartIcon from '../../assets/images/icons/cart.svg'
 
 import Cart from "../Cart/Cart";
-import useLocalStorage from "../../hooks/useLocalStorage";
+import RegistrationForm from "../Registration/RegistrationForm";
 
 function Header() {
     const navigate = useNavigate()
     const [openLoginForm, setOpenLoginForm] = useState(false);
+    const [openRegistrationForm, setRegistrationForm] = useState(false);
+
     const [openCart, setOpenCart] = useState(false);
 
     const products = [
@@ -46,12 +48,16 @@ function Header() {
                 <Button variant="nav">О компании</Button>
                 <Button variant="nav">Контакты</Button>
                 <Button onClick={() => setOpenLoginForm(true)}>Войти</Button>
+                <Button onClick={() => setRegistrationForm(true)}>Зарегистрироваться</Button>
                 <Button variant="icon" icon={cartIcon} onClick={() => {
                     setOpenCart(true)
                 }}/>
             </div>
             <Modal open={openLoginForm} setOpen={setOpenLoginForm}>
                 <LoginForm active={openLoginForm} setActive={setOpenLoginForm}/>
+            </Modal>
+            <Modal open={openRegistrationForm} setOpen={setRegistrationForm}>
+                <RegistrationForm active={openRegistrationForm} setActive={setRegistrationForm}/>
             </Modal>
             <Modal variant="full" open={openCart} setOpen={setOpenCart}>
                 <Cart products={products}/>

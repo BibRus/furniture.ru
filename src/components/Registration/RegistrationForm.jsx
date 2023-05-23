@@ -1,4 +1,4 @@
-import style from './LoginForm.module.css';
+import style from './RegistrationForm.module.css';
 
 import {useForm} from "react-hook-form";
 import Button from "../Button/Button";
@@ -6,9 +6,7 @@ import Text from "../Text/Text";
 
 import AuthService from "../../Services/AuthService";
 
-export default function LoginForm({active, setActive}) {
-
-
+export default function RegistrationForm({active, setActive}) {
 
     const {
         register,
@@ -18,23 +16,42 @@ export default function LoginForm({active, setActive}) {
 
     const onSubmit = (data) => {
         setActive(false);
-        new AuthService().login(data);
+        data.roles = ['user'];
+        new AuthService().register(data);
     };
-
 
     return (
         <form className={style.container} onSubmit={handleSubmit(onSubmit)}>
             <div className={style.header}>
-                <Text type="title">Вход в аккаунт</Text>
+                <Text type="title">Создайте аккаунт</Text>
                 <Text type="bold">Сможете быстро оформлять заказы, использовать бонусы</Text>
             </div>
+
+            <label className={style.label}>Имя</label>
+            <input className={style.input} placeholder="Введите имя"
+                   {...register("name", {
+                       required: true,
+                       maxLength: 20,
+                       pattern: /^[A-Za-z0-9]+$/i
+                   })}
+            />
+            {errors?.name?.type === "required" && (
+                <p className={style.error}>Это поле обязательно</p>
+            )}
+            {errors?.name?.type === "maxLength" && (
+                <p className={style.error}>Длина не больше 20 символов</p>
+            )}
+            {errors?.name?.type === "pattern" && (
+                <p className={style.error}>Только латинские символы</p>
+            )}
+
             <label className={style.label}>Логин</label>
             <input className={style.input} placeholder="Введите логин"
-                {...register("login", {
-                    required: true,
-                    maxLength: 20,
-                    pattern: /^[A-Za-z0-9]+$/i
-                })}
+                   {...register("login", {
+                       required: true,
+                       maxLength: 20,
+                       pattern: /^[A-Za-z0-9]+$/i
+                   })}
             />
             {errors?.login?.type === "required" && (
                 <p className={style.error}>Это поле обязательно</p>
@@ -67,11 +84,10 @@ export default function LoginForm({active, setActive}) {
             {errors?.password?.type === "pattern" && (
                 <p className={style.error}>Только латинские символы</p>
             )}
-            <Button type="submit">Войти</Button>
+            <Button type="submit">Зарегистироваться</Button>
             <div className={style.footer}>
                 <Text>Продолжая, вы соглашаетесь со сбором и обработкой персональных данных и пользовательским соглашением</Text>
             </div>
         </form>
     );
 }
-
