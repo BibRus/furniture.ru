@@ -4,7 +4,7 @@ import {useForm} from "react-hook-form";
 import Button from "../Button/Button";
 import Text from "../Text/Text";
 
-import AuthService from "../../Services/AuthService";
+import AuthService from "../../services/AuthService";
 
 export default function RegistrationForm({active, setActive}) {
 
